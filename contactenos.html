@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetas de Cocina Latinoamericanas</title>
+    <link rel="icon" href="/static/img/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/styles.css" />
+    <script src="/static/js/validar_contacto.js"></script>
+</head>
+<body>
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="/"><img src="/static/img/rcl_logo.png" alt="Recetas de Cocina Latinoamericana"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/"><h6>Inicio</h6></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/recetas.html"><h6>Recetas</h6></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/recetas_alta.html"><h6>Tu receta</h6></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contactenos.html"><h6 id="active">Contáctenos</h6></a>
+          </li>
+        </ul>
+        <div class="navbar_usuarios">
+          <a href="/login.html"><i class="fas fa-user"></i></a>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <hr>
+    <div class="container-fluid">
+        <form action="" method="" id="form_contacto">
+            <div class="row justify-content-md-center">
+                <div class="col col-lg-6  receta">
+                    <h3>Ingresá tu consulta: </h3>
+                    <div class="input-group">
+                        <span class="input-group-text" id="addon-wrapping">Nombre y Apellido: </span>
+                        <input type="text" class="form-control"aria-label="username" aria-describedby="addon-wrapping" name="username">
+                    </div>
+                    <h6 id="msg_username"></h6>
+                    <div class="input-group">
+                        <span class="input-group-text" id="addon-wrapping">Email: </span>
+                        <input type="email" class="form-control"aria-label="email" aria-describedby="addon-wrapping" name="email">
+                    </div>
+                    <h6 id="msg_email"></h6>
+                    <div class="input-group">
+                        <span class="input-group-text">Ingrese la consulta:</span>
+                        <textarea class="form-control" aria-label="With textarea" name="consulta"></textarea>
+                    </div>
+                    <h6 id="msg_consulta"></h6>
+                </div>
+            </div>
+            <div class="botones_btn">
+                <button type="submit" class="btn_success">Enviar</button>
+                <button type="reset" class="btn_danger">Borrar datos</button>
+            </div>
+        </form>
+    </div>
+    <hr>
+    <footer class="row text-center">
+      <div class="col">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.9400576393878!2d-58.48387002488747!3d-34.555073054929714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb69215b6aaab%3A0xcbe90dc9b728abd8!2sWashington%203664%2C%20C1430EUX%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1715733263422!5m2!1ses-419!2sar" width="350" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="col">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram-square"></i></a>
+          <a href="#"><i class="fab fa-whatsapp-square"></i></a>
+          <a href="#"><i class="fas fa-envelope"></i></a>
+      </div>
+      <hr>
+      <h6><i class="fas fa-copyright copyright"></i>Copyright 2024 Recetas de Cocina Latinoamericana</h6>
+    </footer>
+</body>

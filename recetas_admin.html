@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetas de Cocina Latinoamericanas</title>
+    <link rel="icon" href="/static/img/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg">
+          <a class="navbar-brand" href="/"><img src="/static/img/rcl_logo.png" alt="Recetas de Cocina Latinoamericana"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="/"><h6>Inicio</h6></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/recetas.html"><h6>Recetas</h6></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/recetas_alta.html"><h6>Tu receta</h6></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contactenos.html"><h6>Contáctenos</h6></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/recetas_adminPrueba.html"><h6 id="active">Admin</h6></a>
+              </li>
+            </ul>
+            <div class="navbar_usuarios">
+              <a href="/login.html"><i class="fas fa-user"></i></a>
+            </div>
+          </div>
+        </nav>
+    </div>
+    <div class="container-fluid">
+      <div class="container text-center">
+        <div class="row">
+            <div class="col-md-6 offset-md-9">
+                <a href="/recetas_alta.html"><button class="btn btn_success">Agregar receta</button></a>
+            </div>
+        </div>
+      </div>
+    </div>
+      <table class="table table-success table-striped">
+        <thead>
+            <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">País de Origen</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Eliminar</th>
+            </tr>
+        </thead>
+        <tbody id="tabla_recetas">
+        </tbody>
+      </table>
+    </div>
+    <hr>
+    <footer class="row text-center">
+      <div class="col">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.9400576393878!2d-58.48387002488747!3d-34.555073054929714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb69215b6aaab%3A0xcbe90dc9b728abd8!2sWashington%203664%2C%20C1430EUX%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1715733263422!5m2!1ses-419!2sar" width="350" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="col">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram-square"></i></a>
+          <a href="#"><i class="fab fa-whatsapp-square"></i></a>
+          <a href="#"><i class="fas fa-envelope"></i></a>
+      </div>
+      <hr>
+      <h6><i class="fas fa-copyright copyright"></i>Copyright 2024 Recetas de Cocina Latinoamericana</h6>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        const URL = "http://127.0.0.1:5000"
+    // Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de
+    // usuario de Pythonanywhere //const URL = "https://USUARIO.pythonanywhere.com/"
+    // Realizamos la solicitud GET al servidor para obtener todos los productos.
+      function obtenerRecetas(){
+        fetch(URL + '/recetas')
+            .then(function (response) { 
+                if (response.ok) {
+                    //Si la respuesta es exitosa (response.ok), convierte el cuerpo de la respuesta de formato
+                    //JSON a un objeto JavaScript y pasa estos datos a la siguiente promesa then.
+                    return response.json(); }
+                else {
+                    //Si hubo un error, lanzar explícitamente una excepción para ser "catcheada" más adelante
+                    throw new Error('Error al obtener las recetas.'); } })
+                //Esta función maneja los datos convertidos del JSON.
+            .then(function (data) { 
+                let recetas = document.getElementById('tabla_recetas');
+                //Selecciona el elemento del DOM donde se mostrarán los productos.
+                // Iteramos sobre cada producto y agregamos filas a la tabla
+                for (let receta of data) { 
+                    let fila = document.createElement('tr');
+                    //Crea una nueva fila de tabla (<tr>) para cada producto.
+                    fila.innerHTML = 
+                    '<tr>' +
+                      '<th scope="row">'+ receta.id +'</th>' +
+                      '<td><img src="'+ URL +'/static/img/public/'+ receta.imagen +'" alt="'+ receta.nombre +'" class="img-thumbnail"></td>' +
+                      '<td>'+ receta.nombre +'</td>' +
+                      '<td>'+ receta.pais_origen +'</td>' +
+                      '<td>' +
+                          '<button class="btn_editar"><a href="/recetas_editar.html?receta='+ receta.id +'">' +
+                              '<i class="fas fa-edit"></i>' +
+                          '</a></button>' +
+                      '</td>' +
+                      '<td>' +
+/*                        '<a href="'+ URL +'/recetas_eliminar/'+ receta.id +'">' +
+                            '<i class="fas fa-trash"></i>' +
+                          '</a>' + */
+                          '<button class="btn_eliminar" onclick="eliminarReceta('+ receta.id +')"><i class="fas fa-trash"></button>' +
+                      '</td>' +
+                    '</tr>'
+                    recetas.appendChild(fila);
+                } })
+                //Captura y maneja errores, mostrando una alerta en caso de error al obtener los productos.
+                .catch(function(error) {
+                // Código para manejar errores
+                    alert('Error al obtener las recetas.'); });
+      }
+
+      function eliminarReceta(id) {
+        // Se muestra un diálogo de confirmación. Si el usuario confirma,
+        // se realiza una solicitud DELETE al servidor a través de
+        ruta = URL + `/recetas_eliminar/${id}`
+        console.log(ruta)
+        if (confirm('¿Estás seguro de que quieres eliminar la receta?')) {
+          fetch(ruta)
+          //fetch(ruta)
+          .then(response => {
+            if (response.ok) {
+              //Si es exitosa (response.ok), elimina el producto y da mensaje de ok.
+              //obtenerRecetas();
+              //Vuelve a obtener la lista de productos para actualizar
+              //la tabla.
+              alert('Receta eliminada correctamente.');
+              location.reload();
+            } 
+          }) // En caso de error, mostramos una alerta con un mensaje de error.
+          .catch(error => { alert(error.message); });
+        }
+      }
+      document.addEventListener('DOMContentLoaded', obtenerRecetas);
+    </script>
+</body>

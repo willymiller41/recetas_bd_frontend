@@ -1,0 +1,185 @@
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    background-color: #ddebf7;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: #170f44 !important
+}
+
+i{
+    font-size: 30px;
+    margin: 10px;
+}
+
+hr{
+    color: #170f44;
+    width: 100%;
+}
+
+.copyright{
+    font-size: 20px;
+}
+
+.btn_success{
+    background-color: #170f44;
+    border: #d3d3d3d1 1px solid;
+    border-radius: 10px;
+    color: white;
+    margin: 5px;
+    padding: 10px;
+}
+
+.btn_danger{
+    background-color: red;
+    border: #d3d3d3d1 1px solid;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+}
+
+.btn_eliminar{
+    background-color: red;
+    border: #d3d3d3d1 1px solid;
+    border-radius: 10px;
+    color: white;
+    padding: 3px;
+    margin: 3px;
+}
+
+.btn_editar{
+    background-color: #a77d0d;
+    border: #d3d3d3d1 1px solid;
+    border-radius: 10px;
+    color: white;
+    padding: 3px;
+    margin: 3px;
+}
+
+.fa-trash, .fa-edit{
+    font-size: 20px;
+}
+
+.botones_btn{
+    text-align: center;
+}
+
+#msg_nombre, #msg_pais_origen, #msg_imagen, #msg_tipo, #msg_tipo_alimentacion, #msg_tiempo_coccion, #msg_ingredientes, #msg_preparacion, #msg_destacada, #msg_username, #msg_email, #msg_consulta, #msg_password{
+    color: red !important;
+    font-size: 14px !important;
+    visibility: hidden;
+}
+
+.img-thumbnail{
+    max-width: 100px !important;
+}
+
+.fab, .fas{
+    color: #170f44 !important;
+}
+
+.navbar{
+    color: #6699ff !important;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.navbar_logo{
+    width: 20%;
+}
+
+.navbar_botonera{
+    width: 60%;
+    text-align: center;
+}
+
+.navbar_botonera_active{
+    color: #a77d0d !important;
+}
+
+.navbar_botonera a{
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #170f44;
+}
+
+.navbar_usuarios{
+    width: 20%;
+    text-align: right;
+}
+
+.navbar_redes a{
+    padding: 10px;
+}
+
+#active{
+    color: #a77d0d !important;
+    font-weight: bold !important;
+}
+
+/* Segunda sección: banner */
+.banner{
+    margin-bottom: 10px;
+}
+
+.banner img{
+    width: 100%;
+    height: auto;
+}
+
+.intro {
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.receta_tarjeta{
+  width:300px !important;
+  border: 1px solid lightgray;
+  box-shadow: 2px 2px 8px 4px #d3d3d3d1;
+  margin: 5px;
+  transition: box-shadow 1s;
+}
+
+.receta_tarjeta:hover{
+    box-shadow: 2px 2px 8px 4px #170f44;
+}
+
+.recetas_botonera{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.recetas_botonera img{
+    width: 100px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 5px;
+}
+
+.receta{
+    border: 1px solid lightgray;
+    box-shadow: 2px 2px 8px 4px #d3d3d3d1;
+    border-radius:15px;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+}
